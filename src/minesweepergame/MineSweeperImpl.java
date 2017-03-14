@@ -13,7 +13,6 @@ public class MineSweeperImpl {
     }
 
     int clicked(int i, int j) {
-        //System.out.println(i+"clicked()"+j);
         int selected= grid[i][j];
         return selected;
         
@@ -26,7 +25,7 @@ public class MineSweeperImpl {
             int j = (int) (Math.random() * (7 - 0) + 0);
             grid[i][j] = 9;
         }
-        display();
+        //display();
     }
     private void display(){
         for (int i = 0; i < 8; i++) {
@@ -155,8 +154,6 @@ public class MineSweeperImpl {
              }
             }
         }
-        
-    display();
     }
 
 
@@ -167,7 +164,6 @@ public class MineSweeperImpl {
                     list[i][j].setText("X");
                     list[i][j].setBackground(Color.red);
                 }
-                
                 list[i][j].setEnabled(false);
             }
         }
@@ -181,7 +177,6 @@ public class MineSweeperImpl {
                 else{
                     int ans=clicked(a,b);
                     if(ans==0 && list[a][b].isEnabled()==true){
-                        System.out.println("a="+a+"b="+b);
                         list[a][b].setText(Integer.toString(ans));
                         list[a][b].setBackground(Color.yellow);
                         list[a][b].setEnabled(false);

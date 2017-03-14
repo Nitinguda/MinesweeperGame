@@ -22,7 +22,7 @@ public class MinesweeperGame extends JFrame implements ActionListener {
     JPanel jPanel1 = new JPanel();
     JPanel jPanel2 = new JPanel();
     JPanel jPanel3 = new JPanel();
-    Dimension frameD = new Dimension(500, 375);
+    Dimension frameD = new Dimension(350, 400);
     Dimension PanalD = new Dimension(500, 400);
     public MinesweeperGame() {
 
@@ -30,7 +30,7 @@ public class MinesweeperGame extends JFrame implements ActionListener {
 
     void initComponents() {
 
-        setTitle("MINESWEEPER");
+        setTitle("MineSweep");
         setMinimumSize(frameD);
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(true);
@@ -61,14 +61,14 @@ public class MinesweeperGame extends JFrame implements ActionListener {
         jPanel1.setLayout(gl);
         ButtonBorder br = new BasicBorders.ButtonBorder(Color.black, Color.darkGray, Color.lightGray, Color.lightGray);
         Icon icn =new ImageIcon("tile.png");
-        Font f=new Font("Serif", Font.BOLD, 15);
+        Font f=new Font("Serif", Font.BOLD, 20);
         
         for (int i = 0; i < 8; i++) {
-            System.out.println("minesweepergame.MinesweeperGame.initComponents()");
             for (int j = 0; j < 8; j++) {
                 list[i][j] = new JButton(i + " " + j,icn);
                 list[i][j].setVisible(true);
                 list[i][j].setFont(f);
+                list[i][j].setBorder(br);
                 list[i][j].addActionListener(this);
                 jPanel1.add(list[i][j]); //adds button to grid
             }
